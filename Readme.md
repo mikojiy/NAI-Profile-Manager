@@ -36,28 +36,90 @@ This is your personal prompt vault — right inside the page, ready when you are
 3. Click “Install”, then go to:  
    → [https://novelai.net/image](https://novelai.net/image)
 
+4. For Mobile, use Firefox Browser then install tampermonkey: https://addons.mozilla.org/en-US/android/addon/tampermonkey/
+
 You’ll see a small 📝 icon in the corner. That’s your control center.
 If you dont see the icon, go to **Extensions > Manage Extensions > Enable Developer Mode > then click Details on Tampermonkey > and Enable Allow User Scripts**
 
 ---
 
-## ✨ Key Features
+
+
+You're absolutely right! I missed the character database feature. Let me update the table to include it:
+
+# NovelAI Prompt Profiles Tampermonkey Script
+
+A powerful Tampermonkey script that enhances your NovelAI experience by providing prompt profile management, character databases, and various utility features.
+
+## Features & Functions
 
 | Feature | Description |
-|--------|-------------|
-| **Prompt Profiles** | Save & manage pairs of positive + negative prompts as named profiles. Switch, rename, delete, or reorder them instantly. |
-| **Negative Prompt Support** | Every profile includes a dedicated negative prompt field — not just positive! |
-| **Global Variables (`{name}`)** | Use placeholders like `{miku}` that expand to full prompts (e.g., `twintail, blue hair, aqua eyes`). |
-| **Wildcards (`[name]`)** | Insert random values from a list: `[character]` → `miku`, `teto`, or `luka`. |
-| **Danbooru Integration** | Fetch tags directly from Danbooru by post ID. Auto-remove unwanted tags (e.g., `text`, `watermark`, `white background`). |
-| **Fill-on-Apply Dialog** | When your prompt contains `{var}`, `[wildcard]`, or `{DB}`, a popup lets you fill values **before applying** — without altering your original profile. |
-| **Dark Mode & Draggable UI** | Toggle dark/light theme. Move the 📝 icon anywhere on screen. |
-| **Full Backup & Restore** | Export/import everything: profiles, variables, wildcards, blacklist, and settings — as a single `.json` file. |
-| **Keyboard Shortcuts** | <ul><li>`Ctrl+1`–`Ctrl+0` → Apply profile #1–#10</li><li>`Ctrl+Q` → Quick-search by name or number</li></ul> |
-| **Auto-Update Check** | Get notified when a new version is available. One click to update. |
-| **Multilingual UI** | Auto-detects browser language. Supports **English**, **Bahasa Indonesia**, and **日本語**. |
+|---------|-------------|
+| **Profile Management** | Create, save, rename, and organize multiple prompt profiles with different settings for various art styles or characters. |
+| **Character System** | Build and manage character profiles with specific prompts that can be applied to your generations. |
+| **Character Database** | Save and manage a reusable collection of characters that can be quickly added to any profile without re-entering prompts. |
+| **Global Variables** | Define reusable variables using `{variable_name}` syntax that can be inserted across multiple prompts. |
+| **Wildcards** | Create randomized options using `[wildcard_name]` syntax to add variety to your generations. |
+| **Danbooru Integration** | Import prompts directly from Danbooru by entering post IDs, with automatic tag filtering. |
+| **Image Settings** | Control generation parameters like steps and guidance scale on a per-profile basis. |
+| **Backup & Restore** | Save all your profiles, settings, and characters to a JSON file and restore them when needed. |
+| **Multi-language Support** | Switch between English, Indonesian, and Japanese interfaces. |
+| **Image Zoom** | Enhanced image viewing with zoom, pan, and reset functionality for generated images. |
+| **Mobile Optimization** | Responsive design that works on both desktop and mobile devices. |
+| **Search Functionality** | Quickly find profiles by name or content with the built-in search feature. |
+| **Tag Blacklist** | Filter out unwanted tags when importing from Danbooru. |
+| **Quick Shortcuts** | Use keyboard shortcuts (Ctrl+Q to toggle search, Ctrl+1-9 for profiles) for faster workflow. |
+| **Update Notifications** | Get notified when a new version of the script is available. |
 
-> ℹ️ **Note**: Prompts are **never translated**. Terms like `twintail`, `masterpiece`, or `school uniform` stay exactly as you write them.
+### Basic Usage
+
+| Action | How to Do It |
+|--------|--------------|
+| **Open the script** | Click the 📝 icon that appears on the page (you can drag it to reposition) |
+| **Create a new profile** | Click the "📁 Profile" button → "🆕 New" → Enter a name |
+| **Save a profile** | Fill in your prompts → Click "📁 Profile" → "💾 Save" |
+| **Apply a profile** | Select a profile from the dropdown → Click "🔄 Override" to replace current prompts or "➕ Append" to add to them |
+| **Add characters** | Go to the "Character" tab → Click "Add Character" → Fill in name and prompt, then it will apply to the character box. 1 box = 1 character, max 10 |
+| **Manage character database** | Go to "Character" tab → Use the "Character Database" section to add, edit, or organize saved characters |
+| **Use variables** | Define variables in Settings → Use `{variable_name}` in your prompts |
+| **Use wildcards** | Define wildcards in Settings → Use `[wildcard_name]` in your prompts |
+| **Import from Danbooru** | Go to "Utility" tab → Click "🔍 Danbooru" → Enter a post ID |
+| **Backup your data** | Go to "Utility" tab → Click "📦 Full Backup" |
+| **Restore data** | Go to "Utility" tab → Click "🔁 Full Restore" → Select your backup file |
+
+### Advanced Features
+
+| Feature | How to Use |
+|---------|------------|
+| **Profile-specific settings** | Each profile can have its own steps and guidance values that will be applied when selected |
+| **Character database management** | Go to "Character" tab → Click "Organize" to edit, rename, or delete saved characters from your database |
+| **Adding database characters to profiles** | In "Character" tab → Select character from database dropdown → Click "Add Selected" |
+| **Profile reordering** | Right-click on a profile → Select "Swap Position" → Enter the position number |
+| **Keyboard shortcuts** | Press Ctrl+Q to toggle search, Ctrl+1-9 to quickly switch between profiles |
+| **Image zoom** | Click on any generated image to open it in zoom mode, then use mouse wheel or buttons to zoom |
+
+## Tips & Tricks
+
+- Use variables for frequently used elements like `{blue_eyes}` or `{masterpiece}`
+- Create wildcards for randomization like `[pose]` with options like "standing, sitting, laying down"
+- Build your character database with commonly used characters for quick access across all profiles
+- Organize your profiles by art style, character, or theme for easier navigation
+- Regularly backup your profiles to avoid losing your work
+- Use the blacklist feature to filter out unwanted tags when importing from Danbooru
+
+## Troubleshooting
+
+| Issue | Solution |
+|-------|----------|
+| **Script not loading** | Make sure Tampermonkey is enabled and the script is updated to the latest version |
+| **Can't find the icon** | The 📝 icon might be in a different position - try refreshing the page |
+| **Profile not applying** | Check that your prompts contain valid text and try using the "Override" button instead of "Append" |
+| **Mobile issues** | Try refreshing the page and ensure you're using a supported mobile browser |
+| **Character database not saving** | Make sure you're clicking "Add to DB" after entering character details |
+
+## Support
+
+For issues, feature requests, or questions, please visit the [GitHub repository](https://github.com/mikojiy/NAI-Profile-Manager/issues).
 
 ---
 
