@@ -43,14 +43,6 @@ If you dont see the icon, go to **Extensions > Manage Extensions > Enable Develo
 
 ---
 
-
-
-You're absolutely right! I missed the character database feature. Let me update the table to include it:
-
-# NovelAI Prompt Profiles Tampermonkey Script
-
-A powerful Tampermonkey script that enhances your NovelAI experience by providing prompt profile management, character databases, and various utility features.
-
 ## Features & Functions
 
 | Feature | Description |
