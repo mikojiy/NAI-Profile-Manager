@@ -1963,7 +1963,7 @@ selects.forEach(sel => {
         }
         setTimeout(async () => {
             try {
-                const res = await fetch('https://raw.githubusercontent.com/mikojiy/NAI-Profile-Manager/main/NAIPM.user.js?t=' + Date.now(), { cache: 'no-cache' });
+                const res = await fetch('https://raw.githubusercontent.com/mikojiy/NAI-Profile-Manager/main/NAIPMOLD.user.js?t=' + Date.now(), { cache: 'no-cache' });
                 const text = await res.text();
                 const match = text.match(/@version\s+([0-9.]+)/);
                 if (!match) return;
@@ -2005,7 +2005,7 @@ selects.forEach(sel => {
                     `;
                     document.body.appendChild(notice);
                     document.getElementById('update-now').onclick = () => {
-                        window.open('https://raw.githubusercontent.com/mikojiy/NAI-Profile-Manager/main/NAIPM.user.js', '_blank');
+                        window.open('https://raw.githubusercontent.com/mikojiy/NAI-Profile-Manager/main/NAIPMOLD.user.js', '_blank');
                         notice.remove();
                     };
                 }
